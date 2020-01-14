@@ -1,0 +1,100 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "datos curiosos",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "datoCuriosoIntent",
+                    "slots": [
+                        {
+                            "name": "pelicula",
+                            "type": "peli",
+                            "samples": [
+                                "{pelicula}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "otro dato",
+                        "dime",
+                        "dame otro",
+                        "dato curioso",
+                        "dame dato curioso",
+                        "dime otro",
+                        "{pelicula}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "peli",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "toy story"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coco"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nemo"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "datoCuriosoIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "pelicula",
+                            "type": "peli",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1204474741446.1244597921297"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1204474741446.1244597921297",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "¿De qué película quieres saber, coco, nemo o toy story?"
+                    }
+                ]
+            }
+        ]
+    }
+}
